@@ -1,15 +1,26 @@
-import React from 'react';
+import CSSModules from 'react-css-modules';
 import style from './style.module.scss';
 
-export default function Rate(props) {
+function Rate({ price, speed, color, isSelect }) {
+
+    let styleCard = color;
+
+
+    if (isSelect) {
+        styleCard += 'cardSelected';
+    }
+
     return (
-        <div className={style.rate}>
-            <div className={style.cardName}>Безлимитный {props.price}</div>
-            <div className={style.cardPrice}>{props.price} руб/мес</div>
-            <div className={style.cardSpeed}>до {props.speed} Мбит/сек</div>
-            <div className={style.cardText}>Объем включенного трафика не ограничен</div>
+
+
+        <div styleName={styleCard}>
+            <div styleName="cardName">Безлимитный {price}</div>
+            <div styleName="cardPrice">{price} руб/мес</div>
+            <div styleName="cardSpeed">до {speed} Мбит/сек</div>
+            <div styleName="cardText">Объем включенного трафика не ограничен</div>
         </div >
     )
 }
 
 
+export default CSSModules(Rate, style);

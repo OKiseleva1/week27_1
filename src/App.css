@@ -1,4 +1,7 @@
 .App {
   display: flex;
-
+  width: 700px;
+  column-gap: 3px;
+  text-align: center;
+  line-height: 20px;
 }
