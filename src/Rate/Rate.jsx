@@ -5,22 +5,21 @@ import style from './style.module.scss';
 
 
 
-function Rate({ price, speed, color, isSelect, onSetSelect }) {
+function Rate({ price, speed, color }) {
+
+    const [isSelect, onSetSelect] = useState(false);
 
     let styleCard = color;
+    let cardSelectedStyle = styleCard + 'cardSelected';
 
     if (isSelect) {
-        styleCard += 'cardSelected';
+        styleCard = cardSelectedStyle;
     }
 
 
     function onClick() {
-        onSetSelect(styleCard += 'cardSelected');
+        onSetSelect(!isSelect);
     }
-    const stateArr = useState(styleCard);
-    styleCard = stateArr[0];
-    onSetSelect = stateArr[1];
-
 
 
     return (

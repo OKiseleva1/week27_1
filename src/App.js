@@ -16,8 +16,7 @@ function App() {
   return (
     <div className="App">
       {allrates.map((allrate, index) =>
-        <Rate key={index} price={allrate.price} speed={allrate.speed} color={allrate.color} isSelect={allrate.isSelect}
-        />
+        <Rate key={index} price={allrate.price} speed={allrate.speed} color={allrate.color} />
       )}
     </div>
   );
