@@ -1,13 +1,13 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import CSSModules from 'react-css-modules';
 import style from './style.module.scss';
 
 
 
 
-function Rate({ price, speed, color }) {
+function Rate({ price, speed, color, id, isSelect, onSetSelect }) {
 
-    const [isSelect, onSetSelect] = useState(false);
+    // const [isSelect, onSetSelect] = useState(false);
 
     let styleCard = color;
     let cardSelectedStyle = styleCard + 'cardSelected';
@@ -17,13 +17,17 @@ function Rate({ price, speed, color }) {
     }
 
 
+    // function onClick() {
+    //     onSetSelect(!isSelect);
+    // }
+
     function onClick() {
-        onSetSelect(!isSelect);
+        onSetSelect(id);
     }
 
 
     return (
-        <div styleName={styleCard} onClick={onClick}>
+        <div id={id} styleName={styleCard} onClick={onClick}>
             <div styleName="cardName">Безлимитный {price}</div>
             <div styleName="cardPrice">{price} руб/мес</div>
             <div styleName="cardSpeed">до {speed} Мбит/сек</div>
